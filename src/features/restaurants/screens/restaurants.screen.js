@@ -22,27 +22,22 @@ margin-bottom: ${(props) => props.theme.space[5]};
 `;
 
 export const RestaurantsScreen = () => {
- const restaurantContext = useContext(RestaurantContext);
- console.log(restaurantContext);
+ const {isLoading, error, restaurants} = useContext(RestaurantContext);
+ 
   return (  
     <SafeArea>
       <SearchContainer>
         <Searchbar />
       </SearchContainer>
        <RestaurantList 
-       data={[{name: 1},
-        {name: 2},
-        {name: 3},
-        {name: 4},
-        {name: 5},
-        {name: 6},
-        {name: 7},
-        {name: 8}]}
-       renderItem={() => <>
+       data={restaurants}
+       renderItem={({item}) => {
+         return(
        <Spacer position="bottom" size = "large">
-       <RestaurantInfoCard />
+       <RestaurantInfoCard restaurant={item}/>
        </Spacer>
-       </>}
+      )}
+      }
        keyExtractor={(item) => item.name}
 
        />
