@@ -13,11 +13,6 @@ import {Icon,
         Section,
         SectionEnd} from "./restaurant-info-card.styles";
 
-
-
-
-
-
 // const Open = styled(SvgXml)`
 // flex-direction: row;
 // `;
@@ -72,16 +67,3 @@ export const RestaurantInfoCard = ({restaurant = {}}) =>{
         </RestaurantCard>
 
     );}
-
-    // const styles = StyleSheet.create({
-    //     card:{
-    //     backgroundColor: "white"
-    //     },
-    //     cover:{
-    //     padding: 20,
-    //     backgroundColor: "white"
-    //     },
-    //     title:{
-    //         padding: 16
-    //     }
-    // })

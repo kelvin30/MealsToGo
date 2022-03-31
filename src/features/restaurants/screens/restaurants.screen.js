@@ -8,6 +8,7 @@ import { Spacer } from "../../../components/spacer/spacer.components";
 import {SafeArea} from "../../../components/utility/safe-area.components"
 import { RestaurantContext } from "../../../services/restaurants/restaurants.context";
 import {View} from "react-native";
+import { ActivityIndicator, Colors } from 'react-native-paper';
 
 const SearchContainer = styled.View`
 padding: ${(props) => props.theme.space[3]};
