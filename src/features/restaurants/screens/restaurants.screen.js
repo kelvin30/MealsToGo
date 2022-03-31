@@ -58,22 +58,3 @@ export const RestaurantsScreen = () => {
     
     )
        };
-       
-
-
-// const styles = StyleSheet.create({
-//     container:{
-//      flex: 1,
-//      marginTop: StatusBar.currentHeight
-//     },
-//     search:{
-//      padding: 16,
-//      backgroundColor: "white" 
-//     },
-   
-//     list:{
-//      flex: 1,
-//      padding: 16,
-//      backgroundColor: "blue"
-//     }
-// })
