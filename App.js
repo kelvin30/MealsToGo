@@ -11,6 +11,7 @@ import {Text} from "react-native";
 import {SafeArea} from "./src/components/utility/safe-area.components"
 import {Ionicons} from '@expo/vector-icons';
 import { RestaurantContextProvider } from './src/services/restaurants/restaurants.context';
+import { LocationContextProvider } from './src/services/location/location.context';
 
 
 
@@ -57,6 +58,7 @@ export default function App() {
   return (
     <>
     <ThemeProvider theme={theme}>
+      <LocationContextProvider>
       <RestaurantContextProvider>
     <NavigationContainer>
     <Tab.Navigator
@@ -73,6 +75,7 @@ export default function App() {
       </Tab.Navigator>
     </NavigationContainer>
     </RestaurantContextProvider>
+    </LocationContextProvider>
      </ThemeProvider>
       <ExpoStatusBar style='auto' />
     
