@@ -29,7 +29,7 @@ left: 50%;
 
 
 export const RestaurantsScreen = () => {
- const {isLoading, error, restaurants} = useContext(RestaurantContext);
+ const {isLoading, restaurants} = useContext(RestaurantContext);
  
   return (  
     <SafeArea>

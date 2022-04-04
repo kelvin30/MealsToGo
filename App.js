@@ -64,6 +64,7 @@ export default function App() {
     <Tab.Navigator
      screenOptions={createScreenOptions}
       tabBarOptions={{
+      // tabBarStyle:[{display: "flex"}], ide e imja
       tabBarActiveTintColor: "tomato",
       tabBarInactiveTintColor: "gray",
       
