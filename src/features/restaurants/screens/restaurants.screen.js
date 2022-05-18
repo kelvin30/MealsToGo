@@ -1,6 +1,6 @@
 import React, {useContext} from  "react";
 import { StatusBar as ExpoStatusBar } from 'expo-status-bar';
-import {FlatList} from 'react-native';
+import {FlatList, Pressable} from 'react-native';
 import {RestaurantInfoCard} from "../components/restaurant-info-card.components";
 import styled from "styled-components/native";
 import { Spacer } from "../../../components/spacer/spacer.components";
@@ -28,9 +28,9 @@ left: 50%;
 `;
 
 
-export const RestaurantsScreen = () => {
+export const RestaurantsScreen = ({navigation}) => {
  const {isLoading, restaurants} = useContext(RestaurantContext);
- 
+ console.log(navigation);
   return (  
     <SafeArea>
     {isLoading && (
@@ -49,9 +49,11 @@ export const RestaurantsScreen = () => {
        data={restaurants}
        renderItem={({item}) => {
          return(
+          <Pressable onPress={() => navigation.navigate("RestaurantDetail")}>
        <Spacer position="bottom" size = "large">
        <RestaurantInfoCard restaurant={item}/>
-       </Spacer>
+       </Spacer> 
+       </Pressable>
       )}
       }
        keyExtractor={(item) => item.name}
