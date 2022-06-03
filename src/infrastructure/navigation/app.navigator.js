@@ -4,7 +4,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
 import { Text } from "react-native";
 
-import { SafeArea } from "../../components/utility/safe-area.component";
+import { SafeArea } from "../../components/utility/safe-area.components";
 
 import { RestaurantsNavigator } from "./restaurants.navigator";
 
@@ -26,6 +26,7 @@ const Map = () => (
     <Text>Map</Text>
   </SafeArea>
 );
+
 
 const createScreenOptions = ({ route }) => {
   const iconName = TAB_ICON[route.name];

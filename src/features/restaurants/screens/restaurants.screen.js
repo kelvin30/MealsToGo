@@ -1,12 +1,10 @@
 import React, {useContext} from  "react";
-import { StatusBar as ExpoStatusBar } from 'expo-status-bar';
 import {FlatList, Pressable} from 'react-native';
 import {RestaurantInfoCard} from "../components/restaurant-info-card.components";
 import styled from "styled-components/native";
 import { Spacer } from "../../../components/spacer/spacer.components";
 import {SafeArea} from "../../../components/utility/safe-area.components"
 import { RestaurantContext } from "../../../services/restaurants/restaurants.context";
-import {View} from "react-native";
 import { ActivityIndicator, Colors } from 'react-native-paper';
 import {Search} from "../components/search.component";
 
