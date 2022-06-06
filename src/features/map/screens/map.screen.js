@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect} from "react";
 import MapView from "react-native-maps";
 import styled from "styled-components/native";
-
+import { MapCallout } from "../components/map-callout.component";
 import {LocationContext} from "../../../services/location/location.context";
 import { RestaurantContext} from "../../../services/restaurants/restaurants.context"
 
@@ -48,6 +48,9 @@ return (
           longitude: restaurant.geometry.location.lng,
         }}
         >
+        <MapView.Callout>
+          <MapCallout restaurant={restaurant} />
+        </MapView.Callout>
 
         </MapView.Marker>;
       })}
