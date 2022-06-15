@@ -6,14 +6,23 @@ import {
   AccountCover,
   AuthButton,
   Title,
+  AnimationWrapper,
 } from "../components/account.styles";
 
-
+import LottieView from "lottie-react-native";
 
 export const AccountScreen = ({navigation}) => {
     return ( 
     <AccountBackground>
     <AccountCover />
+    <AnimationWrapper>
+    <LottieView 
+      keyword="animation"
+      autoPlay
+      resizeMode="cover"
+      source={require("../../../../assets/burger.json")}
+    />
+    </AnimationWrapper>
     <Title>Meals To Go</Title>
     <AccountContainer>
         <AuthButton
@@ -25,7 +34,7 @@ export const AccountScreen = ({navigation}) => {
         </AuthButton>
         <Spacer size="large">
           <AuthButton
-            icon="lock-open-outline"
+            icon="email"
             mode="contained"
             onPress={() => navigation.navigate("Register")}
           >
