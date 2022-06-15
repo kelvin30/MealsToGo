@@ -2,7 +2,7 @@ import React, { createContext, useState, useEffect , useContext} from "react";
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-import { AuthenticationContext } from "../../services/authentication/authentication.context";
+import { AuthenticationContext } from "../authentication/authentication.context";
 
 export const FavouritesContext = createContext();
 
