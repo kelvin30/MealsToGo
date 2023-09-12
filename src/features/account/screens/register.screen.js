@@ -1,4 +1,7 @@
-import React, { useContext, useState} from "react";
+import React, { useState, useContext } from "react";
+
+import { ActivityIndicator, Colors } from "react-native-paper";
+
 import {
   AccountBackground,
   AccountCover,
@@ -8,8 +11,6 @@ import {
   ErrorContainer,
   Title,
 } from "../components/account.styles";
-import { ActivityIndicator, Colors } from "react-native-paper";
-
 import { Text } from "../../../components/typography/text.components";
 import { Spacer } from "../../../components/spacer/spacer.components";
 import { AuthenticationContext } from "../../../services/authentication/authentication.context";
@@ -18,12 +19,11 @@ export const RegisterScreen = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [repeatedPassword, setRepeatedPassword] = useState("");
-  const { onRegister,isLoading, error } = useContext(AuthenticationContext);
-    
-    return (
-      <AccountBackground>
-        <AccountCover />
-        <Title>Meals To Go</Title>
+  const { onRegister, isLoading, error } = useContext(AuthenticationContext);
+  return (
+    <AccountBackground>
+      <AccountCover />
+      <Title>Meals To Go</Title>
       <AccountContainer>
         <AuthInput
           label="E-mail"
@@ -59,11 +59,11 @@ export const RegisterScreen = ({ navigation }) => {
           </ErrorContainer>
         )}
         <Spacer size="large">
-        {!isLoading ? ( 
-          <AuthButton
+          {!isLoading ? (
+            <AuthButton
               icon="email"
               mode="contained"
-              onPress={() => onRegister( email, password, repeatedPassword)}
+              onPress={() => onRegister(email, password, repeatedPassword)}
             >
               Register
             </AuthButton>
@@ -77,6 +77,6 @@ export const RegisterScreen = ({ navigation }) => {
           Back
         </AuthButton>
       </Spacer>
-      </AccountBackground>
-    );
-  };
+    </AccountBackground>
+  );
+};

@@ -1,13 +1,18 @@
-import { StatusBar as ExpoStatusBar } from 'expo-status-bar';
-import React from 'react';
-import {ThemeProvider} from "styled-components/native";
-import {theme} from './src/infrastructure/theme';
-import {useFonts as useOswald, Oswald_400Regular} from '@expo-google-fonts/oswald';
-import {useFonts as useLato, Lato_400Regular} from '@expo-google-fonts/lato';
-import { Navigation } from "./src/infrastructure/navigation";
-import * as firebase from "firebase";
-import { AuthenticationContextProvider } from './src/services/authentication/authentication.context';
+import { StatusBar as ExpoStatusBar } from "expo-status-bar";
+import React from "react";
+import { ThemeProvider } from "styled-components/native";
+import { initializeApp } from "firebase/app";
 
+import {
+  useFonts as useOswald,
+  Oswald_400Regular,
+} from "@expo-google-fonts/oswald";
+import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
+
+import { theme } from "./src/infrastructure/theme";
+import { Navigation } from "./src/infrastructure/navigation";
+
+import { AuthenticationContextProvider } from "./src/services/authentication/authentication.context";
 
 const firebaseConfig = {
   apiKey: "AIzaSyA11gya4UYrZ-Zdgkf5-hrh1milnmcKPXE",
@@ -18,44 +23,23 @@ const firebaseConfig = {
   appId: "1:1057172839230:web:fef0632bb5cbf9a88d6a6f"
 };
 
-
-if (!firebase.apps.length) {
-  firebase.initializeApp(firebaseConfig);
-}
+initializeApp(firebaseConfig);
 
 export default function App() {
+  const [oswaldLoaded] = useOswald({
+    Oswald_400Regular,
+  });
 
-//  const [isAuthenticated, setIsAuthenticated] = useState(false)
+  const [latoLoaded] = useLato({
+    Lato_400Regular,
+  });
 
-//  useEffect(() => {
-//    setTimeout(() => {
-//      signInWithEmailAndPassword("kelvin@rumani.io", "test123")
-//      .then((user) => {
-//         console.log(user);
-//         setIsAuthenticated(true);
-//      }).catch((e) => {
-//        console.log("failed to authenticate", e);
-//      })
-//    }, 5000);
-//  }, []);
+  if (!oswaldLoaded || !latoLoaded) {
+    return null;
+  }
 
-
-  
-    const [oswaldLoaded] = useOswald({
-      Oswald_400Regular,
-    });
-    const [latoLoaded] = useLato({
-      Lato_400Regular,
-    });
-
-    if(!oswaldLoaded || !latoLoaded){
-      return null;
-    }
-  
-  
-
-    return (
-      <>
+  return (
+    <>
       <ThemeProvider theme={theme}>
         <AuthenticationContextProvider>
           <Navigation />
@@ -63,5 +47,5 @@ export default function App() {
       </ThemeProvider>
       <ExpoStatusBar style="auto" />
     </>
-    );
-  }
+  );
+}
