@@ -1,0 +1,41 @@
+{
+  "expo": {
+    "name": "MealsToGo",
+    "slug": "MealsToGo",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0,
+      "url": "https://u.expo.dev/19050656-993a-43f5-9c89-e2cceb834fa5"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "19050656-993a-43f5-9c89-e2cceb834fa5"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    }
+  }
+}
