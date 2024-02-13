@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "MealsToGo",
-    "slug": "MealsToGo",
+    "slug": "mealstogo2024",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -12,7 +12,7 @@
     },
     "updates": {
       "fallbackToCacheTimeout": 0,
-      "url": "https://u.expo.dev/19050656-993a-43f5-9c89-e2cceb834fa5"
+      "url": "https://u.expo.dev/11fc02a8-1786-4bab-89da-1505dc5100c4"
     },
     "assetBundlePatterns": [
       "**/*"
@@ -31,11 +31,12 @@
     },
     "extra": {
       "eas": {
-        "projectId": "19050656-993a-43f5-9c89-e2cceb834fa5"
+        "projectId": "11fc02a8-1786-4bab-89da-1505dc5100c4"
       }
     },
     "runtimeVersion": {
       "policy": "sdkVersion"
-    }
+    },
+    "owner": "kelvin9797"
   }
 }
