@@ -16,9 +16,9 @@ import { FavouritesContextProvider } from "../../services/favorites/favorites.co
 const Tab = createBottomTabNavigator();
 
 const TAB_ICON = {
-  Restaurants: "md-restaurant",
-  Map: "md-map",
-  Settings: "md-settings",
+  Restaurants: "restaurant-sharp",
+  Map: "location-sharp",
+  Settings: "settings-sharp",
 };
 
 
